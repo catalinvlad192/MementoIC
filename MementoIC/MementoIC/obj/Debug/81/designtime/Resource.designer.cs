@@ -2384,11 +2384,17 @@ namespace MementoIC
 			// aapt resource value: 0x7F0C001A
 			public const int bottom = 2131492890;
 			
+			// aapt resource value: 0x7F010022
+			public const int buttonDelete = 2130772002;
+			
 			// aapt resource value: 0x7F010002
 			public const int buttonNew = 2130771970;
 			
 			// aapt resource value: 0x7F0C001B
 			public const int buttonPanel = 2131492891;
+			
+			// aapt resource value: 0x7F010021
+			public const int buttonSave = 2130772001;
 			
 			// aapt resource value: 0x7F0C001C
 			public const int cancel_action = 2131492892;
@@ -2398,6 +2404,9 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0C001E
 			public const int checkbox = 2131492894;
+			
+			// aapt resource value: 0x7F010006
+			public const int checkBoxItem = 2130771974;
 			
 			// aapt resource value: 0x7F0C0008
 			public const int chronometer = 2131492872;
@@ -2416,6 +2425,9 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0C0024
 			public const int customPanel = 2131492900;
+			
+			// aapt resource value: 0x7F010013
+			public const int datePicker = 2130771987;
 			
 			// aapt resource value: 0x7F0C0025
 			public const int decor_content_parent = 2131492901;
@@ -2437,6 +2449,12 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0C002B
 			public const int design_navigation_view = 2131492907;
+			
+			// aapt resource value: 0x7F010011
+			public const int editDescription = 2130771985;
+			
+			// aapt resource value: 0x7F010009
+			public const int editName = 2130771977;
 			
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
@@ -2497,6 +2515,15 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0C000F
 			public const int line3 = 2131492879;
+			
+			// aapt resource value: 0x7F010012
+			public const int linearLayout1 = 2130771986;
+			
+			// aapt resource value: 0x7F010014
+			public const int linearLayout2 = 2130771988;
+			
+			// aapt resource value: 0x7F010016
+			public const int linearLayout3 = 2130771990;
 			
 			// aapt resource value: 0x7F0C0040
 			public const int listMode = 2131492928;
@@ -2561,6 +2588,18 @@ namespace MementoIC
 			// aapt resource value: 0x7F0C0053
 			public const int radio = 2131492947;
 			
+			// aapt resource value: 0x7F010017
+			public const int radioGroup = 2130771991;
+			
+			// aapt resource value: 0x7F010020
+			public const int radioHigh = 2130772000;
+			
+			// aapt resource value: 0x7F010018
+			public const int radioLow = 2130771992;
+			
+			// aapt resource value: 0x7F010019
+			public const int radioMedium = 2130771993;
+			
 			// aapt resource value: 0x7F0C0054
 			public const int right = 2131492948;
 			
@@ -2593,6 +2632,9 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0C005D
 			public const int scrollView = 2131492957;
+			
+			// aapt resource value: 0x7F010010
+			public const int scrollView1 = 2130771984;
 			
 			// aapt resource value: 0x7F0C005F
 			public const int search_badge = 2131492959;
@@ -2684,11 +2726,17 @@ namespace MementoIC
 			// aapt resource value: 0x7F0C0018
 			public const int text2 = 2131492888;
 			
+			// aapt resource value: 0x7F010008
+			public const int textDate = 2130771976;
+			
 			// aapt resource value: 0x7F0C007E
 			public const int textinput_counter = 2131492990;
 			
 			// aapt resource value: 0x7F0C007F
 			public const int textinput_error = 2131492991;
+			
+			// aapt resource value: 0x7F010007
+			public const int textName = 2130771975;
 			
 			// aapt resource value: 0x7F0C007B
 			public const int textSpacerNoButtons = 2131492987;
@@ -2701,6 +2749,9 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0C0019
 			public const int time = 2131492889;
+			
+			// aapt resource value: 0x7F010015
+			public const int timePicker = 2130771989;
 			
 			// aapt resource value: 0x7F0C001A
 			public const int title = 2131492890;
@@ -2929,6 +2980,9 @@ namespace MementoIC
 			// aapt resource value: 0x7F0F0028
 			public const int design_text_input_password_icon = 2131689512;
 			
+			// aapt resource value: 0x7F020003
+			public const int ListView = 2130837507;
+			
 			// aapt resource value: 0x7F0F0001
 			public const int notification_action = 2131689473;
 			
@@ -2985,6 +3039,9 @@ namespace MementoIC
 			
 			// aapt resource value: 0x7F0F003B
 			public const int support_simple_spinner_dropdown_item = 2131689531;
+			
+			// aapt resource value: 0x7F020004
+			public const int TaskEdit = 2130837508;
 			
 			// aapt resource value: 0x7F0F003C
 			public const int tooltip = 2131689532;
