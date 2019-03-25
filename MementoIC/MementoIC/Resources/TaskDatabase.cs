@@ -9,14 +9,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
 using SQLite;
 using System.IO;
-
-
-namespace MementoIC
+namespace TaskManager
 {
-
     //DataBase
     public class TaskDatabase : SQLiteConnection
     {
@@ -51,7 +47,7 @@ namespace MementoIC
         {
             lock (locker)
             {
-                return Table<Task>().FirstOrDefault(x => x.getName() == name);
+                return Table<Task>().FirstOrDefault(x => x.name == name);
             }
         }
 
@@ -71,13 +67,18 @@ namespace MementoIC
             }
         }
 
+        //		public int DeleteStock(int id) 
+        //		{
+        //			lock (locker) {
+        //				return Delete<Stock> (new Stock () { Id = id });
+        //			}
+        //		}
         public int DeleteTask(Task tk)
         {
             lock (locker)
             {
-                return Delete<Task>(tk.getName());
+                return Delete<Task>(tk.name);
             }
         }
     }
-
 }

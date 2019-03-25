@@ -11,16 +11,16 @@ using Android.Views;
 using Android.Widget;
 using SQLite;
 
-namespace MementoIC
+namespace TaskManager
 {
-
     public class Task
     {
-        private string name;
-        private string description;
-        private Boolean status;
-        private DateTime deadline;
-        private int priority;
+        //private string name;
+        // private string description;
+        //private Boolean status = false;         //this way <HARD> OR
+        //private DateTime deadline;
+        //private int priority;
+
 
         //constructor with arguments
         public Task(string name, string description, Boolean status, DateTime deadline, int priority)
@@ -42,50 +42,18 @@ namespace MementoIC
             this.priority = 1;
         }
 
-        //GETTERS
-        public string getName()
-        {
-            return this.name;
-        }
-        public string getDescription()
-        {
-            return this.description;
-        }
-        public Boolean getStatus()
-        {
-            return this.status;
-        }
-        public DateTime getDeadline()
-        {
-            return this.deadline;
-        }
-        public int getPriority()
-        {
-            return this.priority;
-        }
+        //or THIS WAY <SIMPLER>
 
-        //SETTERS
-        public void setName(string name)
-        {
-            this.name = name;
-        }
-        public void setDescription(string descr)
-        {
-            this.description = descr; ;
-        }
-        public void setStatus(Boolean status)
-        {
-            this.status = status;
-        }
-        public void setDeadline(DateTime dt)
-        {
-            this.deadline = dt;
-        }
-        public void setPriority(int pr)
-        {
-            this.priority = pr;
-        }
+        //our primary key
+        [PrimaryKey]
+        public string name { get; set; }
+
+        public string description { get; set; }
+
+        public Boolean status { get; set; }
+
+        public DateTime deadline { get; set; }
+
+        public int priority { get; set; }
     }
-
-
 }
