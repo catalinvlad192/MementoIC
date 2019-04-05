@@ -10,7 +10,7 @@ using MementoIC;
 
 namespace TaskManager
 {
-    [Activity(Label = "TaskManager", MainLauncher = true)]
+    [Activity(Label = "Memento", MainLauncher = true, Icon = "@drawable/wall")]
     class MainActivity : Activity
     {
         //list of tasks <static>

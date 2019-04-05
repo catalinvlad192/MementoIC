@@ -70,3 +70,4 @@ D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\System.Runtime.Serialization.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\System.ServiceModel.Internals.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\System.Xml.pdb
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\MementoIC.csprojAssemblyReference.cache
