@@ -13,10 +13,10 @@ using MementoIC;
 
 namespace TaskManager
 {
-    [Activity(Label = "ActivityTaskEdit")]
+    [Activity(Label = "Task Edit/Add", Icon = "@drawable/wall")]
     public class ActivityTaskEdit : Activity
     {
-        //declaration of all objects presented in TaskEdit.axml
+        //Declaration of all objects presented in TaskEdit.axml
         EditText name;
         EditText description;
         DatePicker date;
@@ -33,7 +33,7 @@ namespace TaskManager
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.TaskEdit);
 
-            //find them by id
+            //Find them by id
             name = FindViewById<EditText>(Resource.Id.editName);
             description = FindViewById<EditText>(Resource.Id.editDescription);
             date = FindViewById<DatePicker>(Resource.Id.datePicker);
@@ -44,13 +44,10 @@ namespace TaskManager
             save = FindViewById<Button>(Resource.Id.buttonSave);
             delete = FindViewById<Button>(Resource.Id.buttonDelete);
 
-
-            //disable delete button
+            //Disable delete button
             delete.Enabled = false;
 
-            //Create your application here
-
-            //initializing everything before showing
+            //Initializing everything before showing
             if ((name.Text = Intent.GetStringExtra("Name")) != null)
             {
                 name.Enabled = false;
@@ -76,93 +73,25 @@ namespace TaskManager
                 check = Intent.GetBooleanExtra("Status", false);
             }
 
-            //on delete button click you delete the current task
+            //On delete button click you delete the current task
             delete.Click += (sender, e) =>
             {
-                ////intent
-                // Intent intentDeleteToMainA = new Intent(this, typeof(MainActivity));
-
-                // //sending data to main activity
-                // intentDeleteToMainA.PutExtra("Name", name.Text);
-                // intentDeleteToMainA.PutExtra("Delete", 1);
-
-                // //finnishing
-                // SetResult(Result.Ok, intentDeleteToMainA);
-                // Finish();
+                Toast.MakeText(this, "Item deleted", ToastLength.Short).Show();
                 Delete();
             };
 
-            //on save button click something happens
+            //On save button click something happens
             save.Click += (sender, e) =>
             {
-                ////intent
-                //Intent intentToMainA = new Intent(this, typeof(MainActivity));
-
-                ////sending data to main activity
-                //if (name != null)
-                //{
-                //    intentToMainA.PutExtra("Name", name.Text);
-                //}
-                //else
-                //{
-                //    intentToMainA.PutExtra("Name", "Name");
-                //}
-
-                //if (description != null)
-                //{
-                //    intentToMainA.PutExtra("Description", description.Text);
-                //}
-                //else
-                //{
-                //    intentToMainA.PutExtra("Description", "Description");
-                //}
-
-                //if (date != null && time != null)
-                //{
-                //    intentToMainA.PutExtra("DateYear", date.Year);
-                //    intentToMainA.PutExtra("DateMonth", date.Month+1);
-                //    intentToMainA.PutExtra("DateDay", date.DayOfMonth);
-                //    intentToMainA.PutExtra("DateHour", time.CurrentHour.IntValue());
-                //    intentToMainA.PutExtra("DateMinute",time.CurrentMinute.IntValue());
-                //}
-                //else
-                //{
-                //    intentToMainA.PutExtra("Date",
-                //        new DateTime(1998,
-                //        1,
-                //        2,
-                //        12,
-                //        00,
-                //        00).ToString());
-                //}
-
-
-                //    if (low.Checked == true)
-                //    {
-                //        intentToMainA.PutExtra("Priority", 1);
-                //    }
-                //    else if (mediu.Checked == true)
-                //    {
-                //        intentToMainA.PutExtra("Priority", 2);
-                //    }
-                //    else
-                //    {
-                //        intentToMainA.PutExtra("Priority", 3);
-                //    }
-
-                //SetResult(Result.Ok, intentToMainA);
-                //Finish();
-
+                Toast.MakeText(this, "Item saved", ToastLength.Short).Show();
                 Save();
             };
-
-
         }
 
-        //method which modifies both the DataBase table and the list of tasks
+        //Method which modifies both the DataBase table and the list of tasks
         protected void Save()
         {
-            //creating the current displayed task for saving
+            //Creating the current displayed task for saving
             int priority;
             if (low.Checked == true)
                 priority = 1;
@@ -172,13 +101,13 @@ namespace TaskManager
                 priority = 3;
             Task newTask = new Task(name.Text, description.Text, check, new DateTime(date.Year, date.Month + 1, date.DayOfMonth, time.CurrentHour.IntValue(), time.CurrentMinute.IntValue(), 00), priority);
 
-            //checking whether the task has to be saved or it has to update another task
+            //Checking whether the task has to be saved or it has to update another task
             if (MainActivity.items.Exists(t => t.name.Equals(name.Text)))
             {
-                //delete the task from the database
+                //Delete the task from the database
                 TaskRepository.UpdateTask(newTask);
 
-                //finding the index in the list of tasks
+                //Finding the index in the list of tasks
                 int position = 0;
                 for (int i = 0; i < MainActivity.items.Count; i++)
                 {
@@ -189,7 +118,7 @@ namespace TaskManager
                     }
                 }
 
-                //update the task from the list of tasks
+                //Update the task from the list of tasks
                 MainActivity.items[position].description = description.Text;
                 MainActivity.items[position].deadline = new DateTime(date.Year, date.Month + 1, date.DayOfMonth, time.CurrentHour.IntValue(), time.CurrentMinute.IntValue(), 00);
                 MainActivity.items[position].priority = priority;
@@ -197,19 +126,19 @@ namespace TaskManager
             }
             else
             {
-                //save the task to DataBase
+                //Save the task to DataBase
                 TaskRepository.SaveTask(newTask);
 
-                //save the task to list of tasks
+                //Save the task to list of tasks
                 MainActivity.items.Add(newTask);
             }
             Finish();
         }
 
-        //method which modifies both the DataBase table and the list of tasks
+        //Method which modifies both the DataBase table and the list of tasks
         protected void Delete()
         {
-            //creating the current displayed task for delete
+            //Creating the current displayed task for delete
             int priority;
             if (low.Checked == true)
                 priority = 1;
@@ -219,10 +148,10 @@ namespace TaskManager
                 priority = 3;
             Task newTask = new Task(name.Text, description.Text, check, new DateTime(date.Year, date.Month + 1, date.DayOfMonth, time.CurrentHour.IntValue(), time.CurrentMinute.IntValue(), 00), priority);
 
-            //delete it from DataBase
+            //Delete it from DataBase
             TaskRepository.DeleteStock(newTask);
 
-            //find index of task in list of tasks
+            //Find index of task in list of tasks
             int position = 0;
             for (int i = 0; i < MainActivity.items.Count; i++)
             {
@@ -233,9 +162,8 @@ namespace TaskManager
                 }
             }
 
-            //remove the item from the list of tasks
+            //Remove the item from the list of tasks
             MainActivity.items.RemoveAt(position);
-
             Finish();
         }
     }

@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using MementoIC;
@@ -21,46 +22,70 @@ namespace TaskManager
 
         public override void OnReceive(Context context, Intent intent)
         {
-
             foreach (Task t in MainActivity.items)
             {
-                //if ((t.deadline.Year <= DateTime.UtcNow.Year && t.status == false) ||
-                //    (t.deadline.Year == DateTime.UtcNow.Year && t.deadline.Month <= DateTime.UtcNow.Month && t.status == false) ||
-                //    (t.deadline.Year == DateTime.UtcNow.Year && t.deadline.Month == DateTime.UtcNow.Month && t.deadline.Day <= DateTime.UtcNow.Day && t.status == false) ||
-                //    (t.deadline.Year == DateTime.UtcNow.Year && t.deadline.Month == DateTime.UtcNow.Month && t.deadline.Day == DateTime.UtcNow.Day && t.deadline.Hour <= DateTime.UtcNow.Hour && t.status == false) ||
-                //    (t.deadline.Year == DateTime.UtcNow.Year && t.deadline.Month == DateTime.UtcNow.Month && t.deadline.Day == DateTime.UtcNow.Day && t.deadline.Hour == DateTime.UtcNow.Hour && t.deadline.Minute <= DateTime.UtcNow.Minute && t.status == false))
-
-                //current date and time
+                //Current date and time
                 DateTime now = DateTime.UtcNow;
                 DateTime nowOrig = now.AddHours(3);
 
-                //compare current date with deadline
+                //Compare current date with deadline
                 if (t.deadline.CompareTo(nowOrig) <= 0 && t.status == false)
                 {
-                    //id from HashCode
-                    int idHash = t.deadline.GetHashCode();
+                    //Id from HashCode
+                    int idH = t.deadline.GetHashCode();
 
-                    //intent to main activity
+                    //Intent to main activity
                     Intent intentToMainA = new Intent(context, typeof(MainActivity));
 
-                    //pending intent
-                    PendingIntent pendingIntentToMainA = PendingIntent.GetActivity(context, idHash, intentToMainA, PendingIntentFlags.OneShot);
-
-                    //building the notification
-                    Notification.Builder notificationBuilder = new Notification.Builder(context)
-               .SetContentIntent(pendingIntentToMainA)
-               .SetSmallIcon(Resource.Drawable.wall)
-               .SetContentTitle(t.name)
-               .SetContentText(t.description)
-               .SetDefaults(NotificationDefaults.Vibrate);
+                    //Pending intent
+                    PendingIntent pendingIntentToMainA = PendingIntent.GetActivity(context, idH, intentToMainA, PendingIntentFlags.OneShot);
 
 
-                    //manage the notification
-                    var notificationM = (NotificationManager)context.GetSystemService(Context.NotificationService);
+                    if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+                    {
+                        // Notification channels are new in API 26 (and not a part of the support library)
+
+                        //Manage the notification
+                        var notificationM = (NotificationManager)context.GetSystemService(Context.NotificationService);
+
+                        //Building the notification
+                        Notification.Builder notificationBuilder = new Notification.Builder(context)
+                                            .SetContentIntent(pendingIntentToMainA)
+                                            .SetSmallIcon(Resource.Drawable.wall)
+                                            .SetContentTitle(t.name)
+                                            .SetContentText(t.description)
+                                            .SetDefaults(NotificationDefaults.Vibrate);
+
+                        //start notification
+                        notificationM.Notify(idH, notificationBuilder.Build());
+
+                        return;
+                    }
+
+                    //Id from HashCode
+                    string idHash = t.deadline.GetHashCode().ToString();
+                    var channelName = "Memento";
+                    var channelDescription = "Deadline reached";
+                    var channel = new NotificationChannel(idHash, channelName, NotificationImportance.Default)
+                    {
+                        Description = channelDescription
+                    };
+
+                    // Instantiate the builder and set notification elements, including pending intent:
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context, idHash)
+                        .SetContentIntent(pendingIntentToMainA)
+                        .SetContentTitle(t.name)
+                        .SetContentText(t.description)
+                  //      .SetDefaults(NotificationDefaults.Sound | NotificationDefaults.Vibrate)
+                        .SetSmallIcon(Resource.Drawable.wall);
+
+                    Notification notification = builder.Build();
+
+                    var notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService) as NotificationManager;
+                    notificationManager.CreateNotificationChannel(channel);
 
                     //start notification
-                    notificationM.Notify(idHash, notificationBuilder.Build());
-
+                    notificationManager.Notify(idH, notification);
                 }
             }
         }

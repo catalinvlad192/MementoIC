@@ -59,6 +59,7 @@ D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\linksrc\
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\linksrc\System.ServiceModel.Internals.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\linksrc\System.ComponentModel.Composition.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\linksrc\Mono.Security.pdb
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\MementoIC.csprojAssemblyReference.cache
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\MementoIC.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\Mono.Android.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\Mono.Security.pdb
@@ -70,4 +71,3 @@ D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\System.Runtime.Serialization.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\System.ServiceModel.Internals.pdb
 D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\android\assets\System.Xml.pdb
-D:\Workspace\C# workspace\GitMementoIC\MementoIC\MementoIC\obj\Debug\81\MementoIC.csprojAssemblyReference.cache

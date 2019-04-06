@@ -31,7 +31,7 @@ namespace TaskManager
 
         public TaskDatabase(string path) : base(path)
         {
-            // create the tables
+            //Create the tables
             CreateTable<Task>();
         }
 
@@ -58,6 +58,7 @@ namespace TaskManager
                 return Update(item);
             }
         }
+
         public int SaveTask(Task item)
         {
             lock (locker)
@@ -67,12 +68,6 @@ namespace TaskManager
             }
         }
 
-        //		public int DeleteStock(int id) 
-        //		{
-        //			lock (locker) {
-        //				return Delete<Stock> (new Stock () { Id = id });
-        //			}
-        //		}
         public int DeleteTask(Task tk)
         {
             lock (locker)

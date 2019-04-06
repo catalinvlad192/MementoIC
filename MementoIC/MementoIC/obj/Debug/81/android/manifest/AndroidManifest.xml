@@ -33,7 +33,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="ActivityTaskEdit" android:name="md53bee3abff7649c4ba50d3a8f3434438b.ActivityTaskEdit" />
+    <activity android:icon="@drawable/wall" android:label="Task Edit/Add" android:name="md53bee3abff7649c4ba50d3a8f3434438b.ActivityTaskEdit" />
     <receiver android:enabled="true" android:name="md53bee3abff7649c4ba50d3a8f3434438b.AlarmManagerOverRepeat" />
     <service android:name="md53bee3abff7649c4ba50d3a8f3434438b.NotificationService" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="TaskManager.TaskManager.mono.MonoRuntimeProvider.__mono_init__" />
