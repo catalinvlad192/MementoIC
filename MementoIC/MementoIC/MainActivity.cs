@@ -45,6 +45,7 @@ namespace TaskManager
             //On button Click starting the new activity
             buttonNew.Click += (sender, e) =>
             {
+                Toast.MakeText(this, "Adding new task", ToastLength.Short).Show();
                 //Make a list from the DataBase
                 var aux = TaskRepository.GetTasks().ToList();
 
@@ -59,17 +60,64 @@ namespace TaskManager
             buttonSortPriority.Click += (sender, e) =>
             {
                 Toast.MakeText(this, "List sorted by Priority", ToastLength.Short).Show();
-            };
 
+                List<Task> sortedList = new List<Task>();
+
+                for(int i=0; i<items.Count;)
+                {
+                    if (items[i].priority == 3)
+                    {
+                        sortedList.Insert(0, items[i]);
+                        items.RemoveAt(i);
+                    }
+                    else if (items[i].priority == 2)
+                    {
+                        sortedList.Insert(sortedList.Count, items[i]);
+                        items.RemoveAt(i);
+                    }
+                    else i++;
+                }
+
+                for (int i = 0; i < items.Count;)
+                {
+                        sortedList.Insert(sortedList.Count, items[i]);
+                        items.RemoveAt(i);
+                }
+
+                items = sortedList;
+
+                //Adapt list
+                adapter = new ListAdapter(this, items);
+                //set the adapter to build the list
+                listView.Adapter = adapter;
+            };
             //On button click sort list by date
             buttonSortDate.Click += (sender, e) =>
             {
                 Toast.MakeText(this, "List sorted by Date", ToastLength.Short).Show();
+
+                for(int i = 0; i<items.Count - 1; i++)
+                {
+                    for(int j=i+1; j<items.Count; j++)
+                    {
+                        if( DateTime.Compare(items[i].deadline, items[j].deadline) > 0 )
+                        {
+                            Task aux;
+                            aux = items[i];
+                            items[i] = items[j];
+                            items[j] = aux;
+                        }
+                    }
+                }
+
+                adapter.NotifyDataSetChanged();
             };
 
             //On listView item click
             listView.ItemClick += (sender, e) =>
             {
+                string s = "Editing task named " + items[e.Position].name;
+                Toast.MakeText(this, s, ToastLength.Short).Show();
                 //intent for sending the data to the next activity and opening it
                 Intent intentOnItemClick = new Intent(this, typeof(ActivityTaskEdit));
                 intentOnItemClick.PutExtra("Name", items[e.Position].name);
