@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="TaskManager.TaskManager" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="27" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+  <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+  <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+  <uses-permission android:name="android.permission.BIND_CARRIER_MESSAGING_SERVICE" />
+  <uses-permission android:name="android.permission.BIND_CARRIER_SERVICES" />
+  <uses-permission android:name="android.permission.BIND_INPUT_METHOD" />
+  <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+  <uses-permission android:name="android.permission.BIND_TEXT_SERVICE" />
+  <uses-permission android:name="android.permission.BODY_SENSORS" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.INJECT_EVENTS" />
+  <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
+  <uses-permission android:name="android.permission.READ_CALENDAR" />
+  <uses-permission android:name="android.permission.REORDER_TASKS" />
+  <uses-permission android:name="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND" />
+  <uses-permission android:name="android.permission.REQUEST_COMPANION_USE_DATA_IN_BACKGROUND" />
+  <uses-permission android:name="android.permission.SET_ACTIVITY_WATCHER" />
+  <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+  <uses-permission android:name="android.permission.SET_TIME" />
+  <uses-permission android:name="android.permission.SET_TIME_ZONE" />
+  <uses-permission android:name="android.permission.STATUS_BAR" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <application android:theme="@android:style/Theme.Holo" android:allowBackup="true" android:icon="@drawable/wall" android:label="MementoIC" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:name="android.app.Application">
+    <activity android:icon="@drawable/wall" android:label="Memento" android:name="md53bee3abff7649c4ba50d3a8f3434438b.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:icon="@drawable/wall" android:label="Task Edit/Add" android:name="md53bee3abff7649c4ba50d3a8f3434438b.ActivityTaskEdit" />
+    <receiver android:enabled="true" android:name="md53bee3abff7649c4ba50d3a8f3434438b.AlarmManagerOverRepeat" />
+    <service android:name="md53bee3abff7649c4ba50d3a8f3434438b.NotificationService" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="TaskManager.TaskManager.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

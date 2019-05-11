@@ -1,0 +1,8 @@
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\bin\Debug\UITest.dll
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\bin\Debug\UITest.pdb
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\bin\Debug\nunit.framework.dll
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\bin\Debug\Xamarin.UITest.dll
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\obj\Debug\UITest.csproj.CoreCompileInputs.cache
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\obj\Debug\UITest.csproj.CopyComplete
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\obj\Debug\UITest.dll
+D:\Workspace\C# workspace\GitMementoIC\MementoIC\UITest\obj\Debug\UITest.pdb

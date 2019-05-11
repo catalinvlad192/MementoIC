@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MementoIC", "MementoIC\MementoIC.csproj", "{7A8F1284-5426-405F-8C9C-1BC9D8CE6CAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITest", "UITest\UITest.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{7A8F1284-5426-405F-8C9C-1BC9D8CE6CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A8F1284-5426-405F-8C9C-1BC9D8CE6CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A8F1284-5426-405F-8C9C-1BC9D8CE6CAE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

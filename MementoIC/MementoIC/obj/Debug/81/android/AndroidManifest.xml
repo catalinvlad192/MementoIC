@@ -11,6 +11,7 @@
   <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
   <uses-permission android:name="android.permission.BIND_TEXT_SERVICE" />
   <uses-permission android:name="android.permission.BODY_SENSORS" />
+  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.INJECT_EVENTS" />
   <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
   <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -24,7 +25,6 @@
   <uses-permission android:name="android.permission.STATUS_BAR" />
   <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.WAKE_LOCK" />
-  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:theme="@android:style/Theme.Holo" android:allowBackup="true" android:icon="@drawable/wall" android:label="MementoIC" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:name="android.app.Application" android:debuggable="true">
     <activity android:icon="@drawable/wall" android:label="Memento" android:name="md53bee3abff7649c4ba50d3a8f3434438b.MainActivity">
